@@ -32,26 +32,6 @@ This project fine-tunes **DeepSeek-R1-Distill-Llama-8B** to bridge that gap, foc
 
 ---
 
-## ⚠️ The 6GB VRAM Challenge (Engineering the “Impossible”)
-
-Training a reasoning model on **6GB VRAM** is a constant fight against OOM errors.  
-Standard Hugging Face `Trainer` pipelines were not viable.
-
-### Critical Optimizations for Low-VRAM Stability
-
-1. **Unsloth Framework**  
-   Enables ~2× faster fine-tuning with ~60% lower memory usage.
-
-2. **Disabled Packing**  
-   `packing = False` prevents sequence concatenation, a major memory spike risk.
-
-3. **Strict Context Limits**  
-   `max_seq_length = 2048` (or 1024 for tighter constraints) to fit within VRAM.
-
-4. **Gradient Accumulation**  
-   `gradient_accumulation_steps = 4` with small batch sizes to simulate scale safely.
-
----
 
 ## 🛠️ Tech Stack
 
@@ -145,6 +125,26 @@ You are a medical expert specializing in clinical reasoning.
 ### Answer:
 """
 ```
+## ⚠️ The 6GB VRAM Challenge (Engineering the “Impossible”)
+
+Training a reasoning model on **6GB VRAM** is a constant fight against OOM errors.  
+Standard Hugging Face `Trainer` pipelines were not viable.
+
+### Critical Optimizations for Low-VRAM Stability
+
+1. **Unsloth Framework**  
+   Enables ~2× faster fine-tuning with ~60% lower memory usage.
+
+2. **Disabled Packing**  
+   `packing = False` prevents sequence concatenation, a major memory spike risk.
+
+3. **Strict Context Limits**  
+   `max_seq_length = 2048` (or 1024 for tighter constraints) to fit within VRAM.
+
+4. **Gradient Accumulation**  
+   `gradient_accumulation_steps = 4` with small batch sizes to simulate scale safely.
+
+---
 
 ---
 
