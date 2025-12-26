@@ -162,7 +162,3 @@ You are a medical expert specializing in clinical reasoning.
 
 ---
 
-## ⚠️ Disclaimer
-
-For research and educational purposes only.  
-Not a substitute for professional medical advice.
