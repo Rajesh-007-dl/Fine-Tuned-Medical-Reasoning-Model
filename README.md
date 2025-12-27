@@ -4,7 +4,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Library](https://img.shields.io/badge/Unsloth-Fast_Fine--Tuning-green)
-![Hardware](https://img.shields.io/badge/GPU-RTX_4050_(6GB)-red)
 
 ---
 
